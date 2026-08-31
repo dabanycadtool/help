@@ -1643,22 +1643,284 @@ h style="padding: 8px; border: 1px solid #eaeaea; width: 30%;">Property Field</t
         <p>A Null Node is exceptionally useful when your streetscape design rules require a sudden structural break. For instance, if a pedestrian walkway must step down significantly in elevation away from a retaining wall cap, but no physical concrete curb is built between them, a Null Element can be placed in the composer tree. Setting the <code>Offset_Y</code> to <code>-0.50</code> allows the subsequent pathway subassembly to generate its pavement vectors at the correct elevation seamlessly.</p>
 
 
-        <h2 id="render-style">Render Style</h2>
-        <div class="construction-box">Under Construction — Visual style configuration guidelines coming soon.</div>
-        <p>Customizing display performance, hatch fills, lineweights, and presentation output styles.</p>
+                <!-- ========================================== -->
+        <!-- CHAPTER 4: STYLES & CUSTOMIZATION          -->
+        <!-- ========================================== -->
+        <h2 id="render-style">4.1 Render Style Configuration</h2>
+        <p>The <strong>DaB ANY Typical Section Utility</strong> features a highly adaptive parametric presentation rendering engine. Rather than producing flat, static geometry, the utility allows designers to change the visual composition mode of cross-sections prior to generating them in AutoCAD. This optimization ensures that whether you are drafting technical structural plans or high-end urban design exhibits, the output is formatted instantly to your drafting criteria.</p>
 
-        <h2 id="material-style">Material Style</h2>
-        <div class="construction-box">Under Construction — Material definition catalog in development.</div>
-        <p>Assigning cross-hatch patterns, asphalt/aggregate textures, and layer standards.</p>
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your render style diagram graphic as 'render_style_display.png' next to this HTML file -->
+            <img src="render_style_display.png" alt="Render Style Configuration Interface Options" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 4.1: Selection Modality for Wireframe, Material Detail, and Realistic Solid Modes</p>
+        </div>
 
-        <h2 id="annotation-style">Annotation Style</h2>
-        <div class="construction-box">Under Construction — Text and dimensioning standards formatting.</div>
-        <p>Configuring dimension styles, slope callouts, component labels, and MText scaling parameters.</p>
+        <h3>The Three Core Vector Rendering Modes</h3>
+        <p>The application interface exposes three distinct drawing composition models through its primary presentation settings:</p>
+        
+        <ul style="line-height: 1.7; margin-bottom: 25px;">
+            <li><strong>1. Wireframe Mode (WF):</strong> Generates clean, lightweight 2D vectors consisting strictly of structural outer line boundaries, links, and cross-slope vectors. This option strips out all interior pattern fills, making it ideal for standard municipal utility plans, bare structural geometry checks, or high-performance basemap setups.</li>
+            <li><strong>2. Detail Hatch Mode (DET):</strong> Automatically calculates and prints specific technical engineering hatch styles (such as standard concrete aggregate grids, asphalt courses, or compacted soil hatches) bounded precisely within your subassembly layer depths. These individual hatch styles are managed dynamically within <a href="#material-style">Section 4.2: Material Style</a>.</li>
+            <li><strong>3. Realistic Solid Mode (REA):</strong> Converts individual subassembly layers into rich, solid color fills or solid vector regions. This option is designed to build high-end visual exhibits, colored streetscape corridor presentation decks, and rapid visual validation models.</li>
+        </ul>
 
-        <h2 id="supplemental-elements">Supplemental Elements</h2>
-        <div class="construction-box">Under Construction — Additional detailing items reference pending.</div>
-        <p>Configuring extra callouts, reference notes, and auxiliary drafting components.</p>
+        <div class="construction-box" style="background: #f0f7ff; border-left: 4px solid #0366d6; color: #004085; margin: 25px 0;">
+            💡 <strong>Sky &amp; Ground Context Hatching Note:</strong> Regardless of the style chosen, the engine includes a built-in context generator that can deploy independent sky bounding patterns and natural ground line hatch patterns. The precise colors, linetypes, and scaling keys for these environment backdrops are mapped inside the upcoming Material Style rules.
+        </div>
 
+        <h3>🏗️ Automated Layer Suffix Scribing Architecture</h3>
+        <p>To adhere to strict CAD infrastructure standards and prevent project file contamination, the utility implements an automated programmatic suffix protocol. When vectors are pushed into model space, the engine appends a specific three-letter abbreviation tracking code to the end of every generated layer name based on the active selection:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">Render Selection</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 20%;">Layer Suffix</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 20%;">Example Layer Profile</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">AutoCAD Workspace Layer Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Wireframe</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code style="color: #d73a49; font-weight: bold;">-WF</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>C-ROAD-LANE-WF</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Contains solo bounding polylines and link nodes. Optimal for fast performance viewports.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Detail Hatch</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code style="color: #d73a49; font-weight: bold;">-DET</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>C-ROAD-LANE-DET</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Isolates explicit industry-standard material pattern fills for engineering construction plans.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Realistic Solid</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code style="color: #d73a49; font-weight: bold;">-REA</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>C-ROAD-LANE-REA</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Houses solid gradient color boundaries designed exclusively for visual rendering and project exhibits.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>This strict suffix separation mechanism gives CAD managers total control over the drawing. By organizing elements this way, you can easily toggle layers on or off using standard AutoCAD freeze commands, or map distinct pen line weights inside your corporate Plot Style Tables (<code>.ctb</code> / <code>.stb</code>) without messing up your main project layers.</p>
+
+
+                    <!-- ========================================== -->
+        <!-- SECTION 4.2: MATERIAL STYLE                -->
+        <!-- ========================================== -->
+        <h2 id="material-style">4.2 Material Style Matrix Manager</h2>
+        <p>The <strong>Material Style Manager</strong> is an advanced configuration workstation accessed via an independent utility window. This interface hosts a smart interactive data schema matrix that maps raw assembly design layers directly to production-ready AutoCAD drafting styles. Within this dashboard, designers can assign target layer namespaces, select structural hatching patterns, adjust rendering scales, and force explicit color indices.</p>
+
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'material_style_dialog.png' next to this HTML file -->
+            <img src="material_style_dialog.png" alt="Material Style Configuration Dialog Grid Interface" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 4.2: Material Style Mapping DataGrid and Interface Properties Matrix</p>
+        </div>
+
+        <h3>Interactive Style Grid Columns</h3>
+        <p>The core of the dialog workspace uses an interactive, row-by-row data entry grid. Each row matches a subassembly material course with the following attributes:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">DataGrid Column</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 20%;">Input Field Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Workspace Drafting Behavior &amp; Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>LAYER NAME</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Editable Text</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Defines the root destination layer name created inside AutoCAD (e.g., <code>C-ROAD-PAVE</code>). The active rendering suffix (<code>-WF</code>, <code>-DET</code>, <code>-REA</code>) is appended automatically during final generation.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>HATCH PATTERN</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ComboBox / Picker Button</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Specifies the drawing fills for <em>Detail Hatch</em> sessions. Users can type a standard pattern string directly, pick from a dropdown selection list, or click the browser ellipsis button (<code>...</code>) to select patterns visually.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>SCALE</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Numeric Value</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Governs the relative spacing density of hatch patterns inside AutoCAD viewports. Adjust this value upward for broad ground sections, or drop it lower for tight structural concrete patterns.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>COLOR (ACI)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Integer ID</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Assigns standard <strong>AutoCAD Color Index (ACI)</strong> color identification markers (integers 1 through 255) natively to generated vector shapes and layers.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🛠️ Core UI Controls &amp; Dynamic Workflow Actions</h3>
+        <ul>
+            <li><strong>🌓 Interface Theme Toggling:</strong> Click the <strong>Theme</strong> button in the upper right corner to dynamically switch the workspace between Light Mode and Dark Mode. The interface uses adaptive styling brushes to ensure readability against any background.</li>
+            <li><strong>Hatch Pattern In-Line Editing:</strong> Double-clicking any cell inside the <em>Hatch Pattern</em> column enables edit mode. You can instantly select from standard patterns, use a custom keyword list, or click the side ellipsis button (<code>...</code>) to choose from your drafting patterns.</li>
+            <li><strong>Dynamic Rows:</strong> The grid supports dynamic row management. Setting <code>CanUserAddRows</code> to true lets you append custom structural tracking layers, providing support for unique regional public work standards.</li>
+            <li><strong>Finalizing Preferences:</strong> Click the semi-bold green <strong>APPLY &amp; CLOSE</strong> button to write preferences directly to active application parameters, allowing you to run your drawing pass instantly.</li>
+        </ul>
+
+                    <!-- ========================================== -->
+        <!-- SECTION 4.3: ANNOTATION STYLE              -->
+        <!-- ========================================== -->
+        <h2 id="annotation-style">4.3 Annotation Style Configuration</h2>
+        <p>The <strong>Annotation Style</strong> dashboard manages automated engineering callouts, dimensional vectors, cross-slopes, and element tags generated alongside your cross-section profiles. By standardizing these parameters within the WPF palette, the engine ensures clean, consistent sheet annotations that comply with corporate and municipal drafting standards without manual leader styling.</p>
+
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'annotation_style_settings.png' next to this HTML file -->
+            <img src="annotation_style_settings.png" alt="Annotation Style Settings Management Workspace" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 4.3: Global Annotation Size, Dimension Visibility, and Placement Controls</p>
+        </div>
+
+        <h3>Core Customization Parameters</h3>
+        <p>The layout engine exposes specific parameter toggles to govern how annotation data labels are rendered inside AutoCAD:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">Control Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 20%;">Configuration Options</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Workspace Drafting Behavior &amp; Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Global Size</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Numeric Scalar</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Establishes the absolute text height and arrow scale across all section callouts. This scale factor updates all dimensions globally to match drawing print targets (e.g., 1:100 scale vs 1:50 detail viewports).</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dimension Line Display</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Controls physical vector extensions. Setting to <strong>ON</strong> draws explicit dimension tracks and ticks. Setting to <strong>OFF</strong> cleans up tight sections by drawing bare floating callout texts over elements.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Annotation Text Display</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Enables or disables structural textual data strings. Toggling to <strong>OFF</strong> isolates pure geometric dimensions, which is useful when preparing geometric basemaps for alternative labeling routines.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Predefined Placement</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">TOP / BOTTOM Selection</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Determines the annotation projection path stack. Choosing <strong>TOP</strong> places dimensions over pavement links. Choosing <strong>BOTTOM</strong> maps extension tags beneath the granular sub-base layers.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🛠️ Best Practices for Annotation Setups</h3>
+        <ul>
+            <li><strong>Clutter Prevention:</strong> For massive cross-sections containing tight corridors (such as narrow boulevards next to multi-layered curbs), change <code>Predefined Placement</code> to <strong>BOTTOM</strong> to stack base depths cleanly away from lane cross-slopes.</li>
+            <li><strong>Exhibit Preparation:</strong> When generating high-end presentation models using <em>Realistic Solid Mode</em>, set <code>Dimension Line Display</code> to <strong>OFF</strong>. This isolates floating data labels right above your color fields, preventing black linework from crossing solid fills.</li>
+            <li><strong>Scale Alignment:</strong> Always align your <code>Global Size</code> attribute with your anticipated model viewport ratio before hitting your vector pass button to prevent over-scaled callouts from overlapping drawing features.</li>
+        </ul>
+
+                <!-- ========================================== -->
+        <!-- SECTION 4.4: SUPPLEMENTAL ELEMENTS         -->
+        <!-- ========================================== -->
+        <h2 id="supplemental-elements">4.4 Supplemental Elements &amp; Entourage Assets</h2>
+        <p>The <strong>Supplemental Elements</strong> framework acts as an entourage decoration engine. This utility allows designers to populate core section assemblies with scale-accurate context objects—such as vehicles, trees, utilities, and pedestrians. This asset pipeline uses a dual-rendering approach: referencing raster images for fast generation inside the interactive preview canvas, while linking to native external AutoCAD block drawings (<code>.dwg</code>) for precise vector insertion into model space.</p>
+
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image snippet as 'supplemental_elements_panel.png' next to this HTML file -->
+            <img src="supplemental_elements_panel.png" alt="Supplemental Element Selection and Property Sliders" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 4.4: Supplemental Block Asset Library and Translation Slider Grid</p>
+        </div>
+
+        <h3>📦 Library Catalog Structure</h3>
+        <p>Assets are organized within an engineered two-tier directory framework (Category ➔ Sub-Element). The application reads its entourage library directly from the following predefined drawing block databases:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0 25px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Core Library Block Reference</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 70%;">Sub-Element Entourage Subclasses (Examples)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>People.dwg</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Walking Man, Biking Woman, Jogger, Walking Family, Transit Commuters.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Vehicles.dwg</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Compact Sedan, Transit Bus, Delivery Van, Electric Scooter, SUV.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Vegetation.dwg</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Deciduous Canopy Tree, Urban Columnar Shrub, Parkway Grass Patch, Ornamental Planter.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Street Light.dwg</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Single Arm LED Luminaire, Historic Double-Ornated Pole, Pedestrian Wayfinding Mast.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Underground.dwg</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Stormwater Main Conduit, Gas Utility Feed Pipe, Fiber Optic Duct Trench, Catch Basin.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Building.dwg</strong> / <strong>Arrow.dwg</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Property Setback Facades, Directional Flow Markers, Lane Scribe Glyphs.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Parametric Asset Adjustment Matrix</h3>
+        <p>Once an entourage sub-element is appended to a typical section component, its placement coordinates are managed via specialized sliders and numerical spinner fields inside the control grid:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 20%;">Default Value / Unit</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Workspace Modification Behavior &amp; Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Supplemental Element</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown Selection</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Selects the high-level entourage block class family file (e.g., <code>People</code>, <code>Vegetation</code>, <code>Vehicles</code>).</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sub-Element</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown Selection</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Isolates the targeted geometry configuration nested inside the source file (e.g., <code>Walking Family</code>).</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Offset X</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.0</code> Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Translates the block instance horizontally relative to the parent element's baseline axis. Perfect for centering vehicles inside lane links or placing pedestrians directly on sidewalks.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Offset Y</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.0</code> Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Translates the block instance vertically relative to the surface plane. Allows underground utilities to drop beneath pavement courses, or poles to match surface lips.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Scale</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code> Factor (fac)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Applies a scalar sizing multiplier to the asset. Use this parameter to adjust vegetation blocks for different canopy maturities without needing separate drawing definitions.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Rotation</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.0</code> Degrees (deg)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Rotates the block insertion orientation counterclockwise around its geometric anchor node. Useful for aligning signage or vehicles to sharp cross-slope grades.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🛠️ Programmatic Nesting Behavior</h3>
+        <p>Supplemental assets are bound directly to their parent element node. This means they inherit all underlying structural behaviors:</p>
+        <ul>
+            <li><strong>Dynamic Tracking:</strong> If you select a travel lane component and modify its horizontal span width from 3.7m to 4.5m, any vehicles or arrows attached to that lane will automatically scale their insertion coordinate offsets to maintain correct positioning relative to the shifting lane boundaries.</li>
+            <li><strong>Instant Previews:</strong> Moving spatial transformation sliders updates the underlying WPF image layer immediately, allowing you to visually position street lights or bike lanes before executing the final AutoCAD vector pass.</li>
+        </ul>
+
+      
         <h2 id="live-preview-window">Live Preview Window</h2>
         <div class="construction-box">Under Construction — Interface preview documentation pending.</div>
         <p>Real-time visual feedback interface overview and canvas control options.</p>
