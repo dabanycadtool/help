@@ -384,17 +384,1146 @@
             <li><strong>Width Overrides:</strong> Enabling <code>Shoulder Width Override Enabled</code> forces the engine to bypass your standard 1.5m platform width value. It drops in your exact <code>Measurement Override</code> threshold values—allowing seamless grading calculations for varying shoulder widths along constraints like bridge touch-downs or custom pull-out zones.</li>
         </ul>
 
+                <!-- SUB-ELEMENT: MEDIAN -->
+        <h3 id="median-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: MEDIAN</h3>
+        <p>The <strong>MEDIAN</strong> element provides a smart, multi-configuration structural barrier or island separating opposing directions of traffic. This component can switch dynamically between two structural design states: a paved structural corridor (<strong>Flush Mode</strong>) or an elevated island assembly (<strong>Raised Mode</strong>).</p>
+
+        <!-- ========================================== -->
+        <!-- CONFIGURATION MODE 1: FLUSH MEDIAN         -->
+        <!-- ========================================== -->
+        <h4 style="color: #222; margin-top: 25px; font-size: 1.1em;">🔴 Mode 1: Flush Paved Median Configuration</h4>
+        <p>When <code>Median Mode</code> is set to <strong>Flush</strong>, the tool builds a flat, structurally paved zone. This setup includes full subsurface pavement course layers and an option to deploy a concrete center median safety barrier.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'median_flush_diagram.png' -->
+            <img src="median_flush_diagram.png" alt="Flush Median Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.3a: Parametric Profiles for Flush Median Layouts with Safety Barrier Option</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Median Mode</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Flush</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Determines the architectural form of the subassembly. Toggle to <strong>Flush</strong> to unlock standard pavement courses.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Median Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The total continuous horizontal width spanned by the flush median platform area.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Median % Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Cross-drainage grading percentage across the flush surface pavement links.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Pave-1 Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.05</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth thickness configuration for the surface wearing structural course.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Pave-2 Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.05</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth profile mapping for the underlying asphalt binder course layer.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.15</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical dimension tracking the crushed stone/gravel aggregate base layer structure.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sub-Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.30</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical profile depth boundaries outlining the lower granular subgrade filter layer.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Include Barrier</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Yes</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Conditional structural toggle (<strong>No / Yes</strong>). Inserts a center concrete safety barrier structure at the median pivot point.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Barrier Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.8</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute vertical projection vector height of the concrete safety barrier block if included.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ========================================== -->
+        <!-- CONFIGURATION MODE 2: RAISED MEDIAN        -->
+        <!-- ========================================== -->
+        <h4 style="color: #222; margin-top: 35px; font-size: 1.1em;">🔵 Mode 2: Raised Crowned Median Configuration</h4>
+        <p>When <code>Median Mode</code> is set to <strong>Raised</strong>, the engine modifies its architectural script to generate a classic raised concrete or green landscape center island profile featuring split width and cross-slope settings on either side of the assembly crown line.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'median_raised_diagram.png' -->
+            <img src="median_raised_diagram.png" alt="Raised Median Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.3b: Geometric Parameters for Raised Crowned Median Layouts</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Median Mode</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Raised</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Determines the architectural form of the subassembly. Toggle to <strong>Raised</strong> to activate crowned island parameters.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Left Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+
+               <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.3b: Geometric Parameters for Raised Crowned Median Layouts</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Median Mode</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Raised</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Determines the architectural form of the subassembly. Toggle to <strong>Raised</strong> to activate crowned island parameters.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Left Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal distance from the centerline pivot to the left finish lip/curb backing boundary link.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Right Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal distance from the centerline pivot to the right finish lip/curb backing boundary link.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Left Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The grading cross-slope of the left median surface panel running upward/downward relative to the crown point.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Right Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The grading cross-slope of the right median surface panel running upward/downward relative to the crown point.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Cap Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth or thickness of the finished median topping block (e.g., concrete infill island or topsoil layer).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ========================================== -->
+        <!-- CORE GLOBAL MEDIAN OVERRIDES               -->
+        <!-- ========================================== -->
+        <h4 style="color: #222; margin-top: 30px; font-size: 1.05em;">⚙️ Global Median Width Override Logic</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Median Width Override Enabled</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>OFF</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">State logic engine modifier. Toggling to <strong>ON</strong> overrides continuous default width tracking parameters.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Measurement Override</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.00</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute alternative horizontal envelope threshold applied explicitly to vector layout drawings when the override condition is set to ON.</td>
+                </tr>
+            </tbody>
+        </table>
+
+                    <!-- SUB-ELEMENT: CURB/GUTTER -->
+        <h3 id="curb-gutter-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: CURB &amp; GUTTER</h3>
+        <p>The <strong>CURB_GUTTER</strong> element builds a high-fidelity, parametric concrete edge drainage profile. It structures a combined catch gutter and structural barrier wall complete with independent back-of-curb aggregate sub-base extensions. This element acts as the critical hydraulic transition boundary between driving lanes and roadside streetscape features.</p>
+
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'curb_gutter_diagram.png' next to this HTML file -->
+            <img src="curb_gutter_diagram.png" alt="Curb and Gutter Dimensions Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.4: Parametric Dimensional Vector Map (Dim A through Dim F)</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The table below outlines the structural fields exposed within the Element Properties Grid when a CURB_GUTTER component is active. <strong>Note: Dimensional variables for this subassembly utilize Millimeters (mm) for precision detailing.</strong></p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Placement Side</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Right</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Flips the geometry script orientation. Options are <strong>Left</strong> or <strong>Right</strong> relative to the assembly's tracking path.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Gutter % Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The transverse drainage slope of the pan link leading into the flowline catch depression.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sub-Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>450</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute vertical thickness of the granular material bedding cushion underneath the concrete structure.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sub-Base Extension</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>300</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The offset distance the granular bedding layer extends horizontally past the outer concrete back-of-curb link.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dim A (Gutter Depth)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>175</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical structural thickness of the concrete gutter apron at its pavement match interface point.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dim B (Gutter Width)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>400</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Total horizontal distance spanning from the lane pavement edge link to the front face of the vertical curb.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dim C (Gutter Flowline Depth)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>25</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The structural catch depression or invert drop threshold directly at the flowline axis point.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dim D (Curb Height)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>150</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The total vertical barrier height measured from the gutter pan invert up to the finished top-of-curb.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dim E (Curb Base Width)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>200</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal footprint thickness tracking the structural base block of the concrete curb assembly.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dim F (Top Curb Width)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>150</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Millimeters (mm)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal design width of the top surface section flat link of the concrete barrier wall.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🛠️ Advanced Structural Modeling Note</h3>
+        <p>By adjusting variables <code>Dim A</code> through <code>Dim F</code>, engineers can dynamically modify vectors to recreate localized public works municipal standards. Setting <code>Dim B</code> (Gutter Width) to 0, for instance, allows the vector layout module to draw a seamless <strong>Barrier/Vertical Curb</strong> directly against the driving lane boundary without generating an apron link.</p>
+
+            
+
+               <!-- ========================================== -->
+        <!-- STREETSCAPE / ROADSIDE FEATURES            -->
+        <!-- ========================================== -->
         <h2 id="streetscape-road-side-features">Streetscape / Roadside Features</h2>
-        <div class="construction-box">Under Construction — Feature list expansion underway.</div>
-        <p>Adding sidewalks, boulevard strips, utility corridors, and street furniture assets.</p>
+        <p>Streetscape and Roadside elements are designed to model multi-modal rights-of-way outside the vehicle travel lanes. These components handle civilian transit envelopes, active landscaping zones, and protective utility or geometric buffer margins.</p>
 
-        <h2 id="earthworks-drainage">Earthworks & Drainage</h2>
-        <div class="construction-box">Under Construction — Grading criteria specifications in progress.</div>
-        <p>Setting up side slopes, ditches, daylight lines, and sub-base structural layers.</p>
+        <!-- SUB-ELEMENT: PATHWAY -->
+        <h3 id="pathway-element" style="color: #0366d6; font-size: 1.3em; margin-top: 30px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: PATHWAY</h3>
+        <p>The <strong>PATHWAY</strong> element models pedestrian sidewalks, shared-use paths, or urban cycle tracks. It features independent structural pavement depth parameters alongside integrated <strong>Buffer Width</strong> margins on both edges to ensure clean clearance tracking away from curbs or property boundaries.</p>
 
-        <h2 id="barriers-walls-misc">Barriers, Walls & Misc</h2>
-        <div class="construction-box">Under Construction — Structural element documentation pending.</div>
-        <p>Integrating guardrails, retaining walls, acoustic barriers, and edge protection elements.</p>
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'pathway_diagram.png' next to this HTML file -->
+            <img src="pathway_diagram.png" alt="PATHWAY Dimensional Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.5: PATHWAY Platform Geometry and Variable Left/Right Clearance Buffers</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The primary horizontal structural travel span width of the pedestrian/active transit platform.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The cross-slope fall rate across the pathway panel link. Standard layouts use negative values to direct surface water runoff toward drainage corridors.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Pavement Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.15</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth of the primary finish concrete or asphalt pathway topping course.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.15</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness tracking the granular crushed leveling base layer underneath the pathway structure.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sub-Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.30</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness boundaries delineating the lower subgrade soil stabilization ballast framework.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Buffer Width Left</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal offset safety/clearance link generated to the left side of the pathway assembly point.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Buffer Width Right</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal offset safety/clearance link generated to the right side of the pathway assembly point.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width Override Enabled</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>OFF</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">State logic engine modifier. Toggling to <strong>ON</strong> enforces custom override dimension tracking over the default width value.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Measurement Override</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.00</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The alternative horizontal width applied explicitly to layout generation routines when the override toggle is active.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>PATH</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The node configuration tracking label registered inside the active Assembly Composer view.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SUB-ELEMENT: BOULEVARD -->
+        <h3 id="boulevard-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BOULEVARD</h3>
+        <p>The <strong>BOULEVARD</strong> element constructs linear green landscaping ribbons or utility strip voids alongside roadway channels. It applies a uniform fill material profile (such as topsoil or brick pavers) across its design width canvas.</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The continuous horizontal width spanned by the green boulevard or utility buffer corridor.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+        <!-- ========================================== -->
+        <!-- STREETSCAPE / ROADSIDE FEATURES            -->
+        <!-- ========================================== -->
+        <h2 id="streetscape-road-side-features">Streetscape / Roadside Features</h2>
+        <p>Streetscape and Roadside elements are designed to model multi-modal rights-of-way outside the vehicle travel lanes. These components handle civilian transit envelopes, active landscaping zones, and protective utility or geometric buffer margins.</p>
+
+        <!-- SUB-ELEMENT: PATHWAY -->
+        <h3 id="pathway-element" style="color: #0366d6; font-size: 1.3em; margin-top: 30px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: PATHWAY</h3>
+        <p>The <strong>PATHWAY</strong> element models pedestrian sidewalks, shared-use paths, or urban cycle tracks. It features independent structural pavement depth parameters alongside integrated <strong>Buffer Width</strong> margins on both edges to ensure clean clearance tracking away from curbs or property boundaries.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'pathway_diagram.png' next to this HTML file -->
+            <img src="pathway_diagram.png" alt="PATHWAY Dimensional Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.5: PATHWAY Platform Geometry and Variable Left/Right Clearance Buffers</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The primary horizontal structural travel span width of the pedestrian/active transit platform.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The cross-slope fall rate across the pathway panel link. Standard layouts use negative values to direct surface water runoff toward drainage corridors.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Pavement Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.15</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth of the primary finish concrete or asphalt pathway topping course.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.15</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness tracking the granular crushed leveling base layer underneath the pathway structure.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sub-Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.30</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness boundaries delineating the lower subgrade soil stabilization ballast framework.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Buffer Width Left</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal offset safety/clearance link generated to the left side of the pathway assembly point.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Buffer Width Right</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal offset safety/clearance link generated to the right side of the pathway assembly point.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width Override Enabled</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>OFF</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">State logic engine modifier. Toggling to <strong>ON</strong> enforces custom override dimension tracking over the default width value.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Measurement Override</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.00</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The alternative horizontal width applied explicitly to layout generation routines when the override toggle is active.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>PATH</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The node configuration tracking label registered inside the active Assembly Composer view.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SUB-ELEMENT: BOULEVARD -->
+        <h3 id="boulevard-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BOULEVARD</h3>
+        <p>The <strong>BOULEVARD</strong> element constructs linear green landscaping ribbons or utility strip voids alongside roadway channels. It applies a uniform fill material profile (such as topsoil or brick pavers) across its design width canvas.</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The continuous horizontal width spanned by the green boulevard or utility buffer corridor.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+
+
+                <!-- ========================================== -->
+        <!-- EARTHWORKS & DRAINAGE                      -->
+        <!-- ========================================== -->
+        <h2 id="earthworks-drainage">Earthworks &amp; Drainage Elements</h2>
+        <p>Earthworks and Drainage elements model structural grading transitions, embankment protections, and dynamic benching systems. These components allow your assembly corridor to step, profile, or slope safely down or up to target daylight interfaces.</p>
+
+        <!-- SUB-ELEMENT: EARTHWORK BUFFER -->
+        <h3 id="earthwork-buffer" style="color: #0366d6; font-size: 1.3em; margin-top: 30px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BUFFER (Grading Margin)</h3>
+        <p>This configuration of the <strong>BUFFER</strong> element acts as a clear grading margin or right-of-way flat tolerance zone before initiating heavy side slopes or embankment structures.</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The continuous baseline horizontal distance for the earthwork layout offset link.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width Override</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Independent horizontal control limit parameter registered inside the layout schema core.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Cross-slope drainage fall pitch applied explicitly to the surface grading link vector.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.01</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Minimal vertical profile layer thickness designed to establish clear drafting separation vector lines.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width Override Enabled</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>OFF</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">State engine condition modifier switching vector passes over to alternative dimensions when set to <strong>ON</strong>.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Measurement Override</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.50</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alternative tracking width values called upon exclusively when the override condition is active.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>MIN</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The tree node node naming identifier mapped directly into the composer workstation stream.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SUB-ELEMENT: BERM -->
+        <h3 id="berm-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BERM</h3>
+        <p>The <strong>BERM</strong> element generates an elevated trapezoidal fill barrier or landscape mound profile. It is commonly implemented for screening, acoustic dampening, or redirecting stormwater runoff paths alongside rights-of-way.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'berm_diagram.png' next to this HTML file -->
+            <img src="berm_diagram.png" alt="BERM Earthwork Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.6: BERM Structural Footprint, Heights, and Infill Slopes</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Top Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal flat plateau length across the highest top surface link of the earthen mound.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute vertical distance calculated from the attachment point up to the top plateau flat link.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Foreslope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1:2</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (V:H)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The vertical-to-horizontal slope ratio tracking up the ascending front face of the berm structure.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Backslope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1:2</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (V:H)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The vertical-to-horizontal slope ratio tracking down the descending back face link to tie down to grade.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Topsoil Thickness</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.0",</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness course allocation for topsoil finishes. Set to 0.0 to generate a completely uniform earthen structural core.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+ plateau flat link.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Foreslope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1:2</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (V:H)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The vertical-to-horizontal slope ratio tracking up the ascending front face of the berm structure.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Backslope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1:2</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (V:H)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The vertical-to-horizontal slope ratio tracking down the descending back face link to tie down to grade.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Topsoil Thickness</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness course allocation for topsoil finishes. Set to 0.0 to generate a completely uniform earthen structural core.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>BERM</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The naming node registered for this specific element component within your active hierarchy tree view.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SUB-ELEMENT: BENCH -->
+        <h3 id="bench-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BENCH (Benching Grading)</h3>
+        <p>The <strong>BENCH</strong> subassembly provides advanced, multi-tier slope configurations for steep deep-cut excavations or heavy structural embankments. It calculates vertical profile bounds to automatically insert safety steps or catchment shelves based on design elevation thresholds.</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Cut Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>2:1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (H:V)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The grading slope projection ratio utilized for segments computed inside a cut condition profile area.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Max Cut Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The maximum allowable continuous vertical lift height within an excavation cut before spawning a flat safety shelf link.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Fill Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>2:1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (H:V)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The grading slope projection ratio utilized for segments computed inside an embankment fill condition profile area.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Max Fill Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The maximum allowable continuous vertical depth within an embankment layer before spawning a level stabilization bench link.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Bench Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal flat span distance of the generated safety ledge or intermediate catchment shelf link.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Bench Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The transverse drainage slope assigned directly across the shelf plateau links to handle shelf water collection.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Target Elevation</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The explicit baseline target elevation threshold used by the internal logic calculation loops to anchor ultimate grading intercept lengths.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>BENCH</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The layout management tag utilized to track this grading node asset inside the dynamic compilation grid.</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+                <!-- ========================================== -->
+        <!-- BARRIERS, WALLS & MISC                     -->
+        <!-- ========================================== -->
+        <h2 id="barriers-walls-misc">Barriers, Walls &amp; Misc Elements</h2>
+        <p>Barriers, Walls and Miscellaneous elements allow designers to integrate rigid structural features when grade requirements or space limitations prevent typical flat slopes. These tools are critical for urban grade separation and roadside hazard protection.</p>
+
+        <!-- SUB-ELEMENT: RETAINING_WALL -->
+        <h3 id="retaining-wall-element" style="color: #0366d6; font-size: 1.3em; margin-top: 30px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: RETAINING_WALL</h3>
+        <p>The <strong>RETAINING_WALL</strong> element generates a parametric structural T-shaped cantilever concrete retaining structure. It exposes precise structural boundary nodes to control structural concrete thickness, footing projections, and front sub-grade embedment lines alongside a built-in earth-backfill slope modifier.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'retaining_wall_diagram.png' next to this HTML file -->
+            <img src="retaining_wall_diagram.png" alt="Retaining Wall Structural Map" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.7: Cantilever Structural Dimensions, Foundation Projections, and Backfill Slope Targets</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The table below outlines the structural fields exposed within your Properties Grid when a RETAINING_WALL module is loaded into the assembly tree:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Placement Side</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Right</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Flips the geometry script orientation. Options are <strong>Left</strong> or <strong>Right</strong> relative to your assembly baseline canvas.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Stem Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute vertical elevation span of the structural wall face measured from the top of the foundation pad base.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Stem Top Thickness</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.3</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal thickness parameter spanning across the topmost flat segment edge link of the concrete wall stem.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Heel Thickness</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.3</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The explicit structural thickness of the concrete stem's back face at its baseline intersection zone with the footing.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Heel Projection</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal footprint extension length of the footing base running underneath the backfill earth side.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Toe Projection</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Horizontal footprint extension length of the footing base running outward away from the retained earth face.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Footing Thickness</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.35</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth thickness of the reinforced structural foundation base slab.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Embedment Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical calculation distance the footing base sits buried beneath the low side finished finish grade line for frost cover compliance.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Fill Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness tracking backfill materials running across the structural heel footing pad.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Side Slope Length</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute surface extension projection length assigned to earthwork links tying back out to target points.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Side Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>2:1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (H:V)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal-to-vertical geometry grade ratio assigned to backfill or daylight tie-downs.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>RETAINING_WALL</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The element management tag utilized to track this structural node asset inside the composer workstation.</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- SUB-ELEMENT: BARRIER -->
+        <h3 id="barrier-component" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BARRIER (New Jersey Safety Shape)</h3>
+        <p>The <strong>BARRIER</strong> subassembly builds a high-fidelity parametric median or roadside safety barrier modeled after the standard New Jersey profile. It uses a three-stage vertical lift and three variable horizontal spans to generate the exact sloped crash-attenuation concrete shoulders required by transit authorities.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'nj_barrier_diagram.png' next to this HTML file -->
+            <img src="nj_barrier_diagram.png" alt="New Jersey Barrier Dimensional Map" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.8: New Jersey Shape Vertical Lift Heights and Sloped Width Parameters</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The table below outlines the properties exposed within the control panel when a BARRIER component is active:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Top Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.15</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal thickness flat span across the very top surface edge link of the concrete wall.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Middle Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.225</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The structural horizontal width calculated right at the transition break point between the lower steep slope and upper gentle slope faces.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Bottom Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.6</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The total maximum structural base width footprint dimension of the concrete barrier block.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Top Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.9</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute vertical distance from the base pavement ground line up to the very top edge link of the concrete block.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Middle Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.45</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The intermediate vertical height tracking from the base pavement ground line up to the sloped profile break point axis.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Curb Height</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.075</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The vertical step height of the flat bottom vertical face section before the primary angled face begins.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>NEW_JERSEY_BARRIER</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The custom node configuration identity string mapped directly into your structural hierarchy composer tree.</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- SUB-ELEMENT: PROPERTY_LINE -->
+        <h3 id="property-line-component" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: PROPERTY LINE &amp; REFERENCE AXIS</h3>
+        <p>The <strong>PROPLN</strong> element drops flexible reference vectors, right-of-way (ROW) lines, or road centerlines directly into your section view layout. It includes smart multi-line state configurations that let draftsmen toggle between a single control axis or an dual-boundary envelope mapping both left and right property boundaries simultaneously.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'property_line_diagram.png' next to this HTML file -->
+            <img src="property_line_diagram.png" alt="Property Line and Reference Axis Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.9: Reference Line Layout Modality (Single Axis vs. Spaced Multi-Line Corridor Envelopes)</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The tables below outline the properties exposed within the control grid when a PROPERTY LINE component is active:</p>
+
+        <!-- GROUP 1: GLOBAL CONTROL VARIABLES -->
+        <h4 style="color: #333; margin-top: 20px; font-size: 1.05em; background: #f6f8fa; padding: 6px; border-left: 3px solid #0366d6;">🌐 Core &amp; Global Layout Configurations</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 10px 0 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Display</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>ON</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Main visual toggle. Set to <strong>OFF</strong> to globally bypass plotting reference lines and labels during vector generation.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Line Quantity</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Modality controller. Select <strong>1</strong> for a solo tracking axis (e.g., Centerline). Select <strong>2</strong> to generate spaced left/right bounding links (e.g., ROW Limits).</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Spacing</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>20</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute total horizontal width envelope calculated between the left and right boundary vectors when Line Quantity is set to 2.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Line Type</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Continuous</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Maps the target linetype vector descriptor natively to AutoCAD (Continuous, Phantom, Dashed, Center, Dot, or Dashdot).</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Line Length</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The default vertical geometry length of the single axis line vector path.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Line Offset X / Y</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0</code> / <code>0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Fine horizontal (X) and vertical (Y) baseline translation modifiers to shift the single reference path relative to the insertion anchor.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Text Rotation</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>90</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Degrees (°)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Orientation tracking for annotations. Select <strong>90</strong> for vertical aligned callouts or <strong>0</strong> for clean horizontal text placement.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Text Offset X / Y</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0</code> / <code>0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Numeric Value</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Fine position tuning offsets to clear annotation text overlapping drafting vector nodes.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>PROPERTY LINE</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The alpha string printed directly alongside the vector path as an AutoCAD text entity.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- GROUP 2: LEFT LINE OVERRIDES -->
+        <h4 style="color: #333; margin-top: 25px; font-size: 1.05em; background: #f6f8fa; padding: 6px; border-left: 3px solid #e06c75;">🔴 Left Boundary Parameter Modifiers</h4>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 5px;">These properties activate explicitly to drive layout geometry on the left side when <code>Line Quantity</code> is toggled to 2:</p>
+        <table style="width: 100%; border-collapse: collapse; margin: 5px 0 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 1px solid #eaeaea;">
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea;">Functional Role Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Line Length</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>5</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Vertical drawing length of the left side boundary vector block.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Line Offset X / Y</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>0</code> / <code>0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Fine position translations to offset the left vector path.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Text Rotation</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>90</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Degrees (°)</td>
+h style="padding: 8px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea;">Functional Role Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Line Length</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>5</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Vertical drawing length of the left side boundary vector block.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Line Offset X / Y</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>0</code> / <code>0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Fine position translations to offset the left vector path.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Text Rotation</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>90</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Degrees (°)</td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Angular rotation threshold (90° vertical or 0° horizontal) for the left-side text.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Text Offset X / Y</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>0</code> / <code>0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Numeric Value</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Independent horizontal/vertical annotation micro-offsets for the left channel data string.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Left Name</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>PROP LINE L</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Text entity string assigned explicitly to label the left boundary marker layout path.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- GROUP 3: RIGHT LINE OVERRIDES -->
+        <h4 style="color: #333; margin-top: 25px; font-size: 1.05em; background: #f6f8fa; padding: 6px; border-left: 3px solid #98c379;">🟢 Right Boundary Parameter Modifiers</h4>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 5px;">These properties activate explicitly to drive layout geometry on the right side when <code>Line Quantity</code> is toggled to 2:</p>
+        <table style="width: 100%; border-collapse: collapse; margin: 5px 0 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 1px solid #eaeaea;">
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 8px; border: 1px solid #eaeaea;">Functional Role Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Right Line Length</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>5</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Vertical drawing length of the right side boundary vector block.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Right Line Offset X / Y</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>0</code> / <code>0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Fine position translations to offset the right vector path.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Right Text Rotation</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>90</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Degrees (°)</td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Angular rotation threshold (90° vertical or 0° horizontal) for the right-side text.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Right Text Offset X / Y</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0</code> / <code>0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Numeric Value</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Independent horizontal/vertical annotation micro-offsets for the right channel data string.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><strong>Right Name</strong></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;"><code>PROP LINE R</code></td>
+                    <td style="padding: 8px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Text entity string assigned explicitly to label the right boundary marker layout path.</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- SUB-ELEMENT: NULL_ELEMENT -->
+        <h3 id="null-element-component" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: NULL ELEMENT (Structural Offset)</h3>
+        <p>The <strong>NULL_ELEMENT</strong> serves as a non-rendering geometric placeholder node within the Assembly Composer tree hierarchy. Its primary function is to introduce precise spatial coordinate shifts, allowing subsequent elements to be appended at custom offsets without creating physical drawing lines or material hatch blocks.</p>
+
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your image as 'null_element_diagram.png' next to this HTML file -->
+            <img src="null_element_diagram.png" alt="Null Element Parametric Link Mapping" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.10: Using Null Nodes to Translate Vector Attachment Coordinates across X and Y Planes</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The table below outlines the positioning properties exposed within the control grid when a NULL_ELEMENT component is active:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Display</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>ON</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Main visual toggle. Set to <strong>OFF</strong> to bypass math routine parsing without breaking cascading node paths.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Offset_X</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The explicit horizontal translation distance. Positive values offset paths outward; negative values track inward.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Offset_Y</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The explicit vertical translation distance. Positive inputs step the node upward; negative inputs drop attachment levels downward.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🛠️ Practical Civil Workflow Application</h3>
+        <p>A Null Node is exceptionally useful when your streetscape design rules require a sudden structural break. For instance, if a pedestrian walkway must step down significantly in elevation away from a retaining wall cap, but no physical concrete curb is built between them, a Null Element can be placed in the composer tree. Setting the <code>Offset_Y</code> to <code>-0.50</code> allows the subsequent pathway subassembly to generate its pavement vectors at the correct elevation seamlessly.</p>
+
 
         <h2 id="render-style">Render Style</h2>
         <div class="construction-box">Under Construction — Visual style configuration guidelines coming soon.</div>
