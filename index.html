@@ -72,17 +72,48 @@
         <h1>DaB ANY CAD: Typical Section Utility — User Manual</h1>
         <p>Welcome to the official documentation. Select any chapter from the left-hand navigation index to view specific guidelines.</p>
 
+                <!-- ========================================== -->
+        <!-- CHAPTER 1: OVERVIEW                        -->
+        <!-- ========================================== -->
         <h2 id="getting-started">Getting Started</h2>
-        <div class="construction-box">Under Construction — Detailed installation and setup guidelines coming soon.</div>
-        <p>Overview of system requirements, initial loading into AutoCAD / Civil 3D, and basic workspace preparation.</p>
+        <p>The <strong>DaB ANY Typical Section Utility</strong> is a high-performance parametric plug-in engineered for Autodesk® AutoCAD® and Civil 3D®. It streamlines urban design workflows by dynamically generating compliant roadway cross-sections and streetscape assemblies directly within your model space environment based on custom engineering parameters.</p>
+        
+        <h3>System Requirements</h3>
+        <ul>
+            <li><strong>Host Application:</strong> Autodesk® AutoCAD® or Civil 3D® (Versions 2020 through 2026+)</li>
+            <li><strong>Operating System:</strong> Microsoft® Windows® 10 or 11 (64-bit)</li>
+            <li><strong>Prerequisites:</strong> .NET Framework 4.8 or .NET 8 (automatically aligned with host AutoCAD version specs)</li>
+        </ul>
 
-        <h2 id="licence">Licence</h2>
-        <div class="construction-box">Under Construction — Licensing workflows are currently being updated.</div>
-        <p>Instructions for generating your machine identifier and applying trial or permanent license keys.</p>
+        <h3>Installation & Loading</h3>
+        <p>If you downloaded the utility from the Autodesk App Store, run the standard installer executable (<code>.msi</code>), which automatically places the plug-in components into the secure ApplicationPlugins directory.</p>
+        <p>To initialize the program within your active CAD drawing session:</p>
+        <ol style="line-height: 1.6; margin-left: 20px;">
+            <li>Launch AutoCAD or Civil 3D.</li>
+            <li>Type <strong><code>NETLOAD</code></strong> into the command line interface and press <em>Enter</em>.</li>
+            <li>Navigate to the application folder and select <code>DaB_ANY_TypicalSection.dll</code> (if loading manually).</li>
+            <li>To open the main control board, type the primary execution command: <strong style="color: #0366d6;"><code>DAB_TYPICALSECTION</code></strong>.</li>
+        </ol>
 
-        <h2 id="policy">Policy</h2>
-        <div class="construction-box">Under Construction — Full privacy and terms documentation drafting in progress.</div>
-        <p>Reference terms regarding data privacy, local registry storage, and software security compliance.</p>
+        <h2 id="licence">Licence Management</h2>
+        <p>We provide a fully functional, risk-free <strong>7-Day Free Trial</strong> for all new users to evaluate the parametric configuration engine. After the trial period expires, an <strong>Annual Subscription License</strong> is required to maintain access to section-generation and export routines.</p>
+        
+        <h3>Activation Steps</h3>
+        <p>When the application launches, the licensing screen will display your unique, secure <strong>Hardware Fingerprint (Machine ID)</strong>.</p>
+        <ol style="line-height: 1.6; margin-left: 20px;">
+            <li>Copy the generated Machine ID string directly from the prompt window.</li>
+            <li>Submit this ID alongside your Autodesk App Store purchase token or invoice to receive your unique Annual Activation Key.</li>
+            <li>Paste your key into the text field and click <strong>Activate License</strong>. The utility will store this authorization locally on your device for uninterrupted usage.</li>
+        </ol>
+
+        <h2 id="policy">Privacy Policy & Security Compliance</h2>
+        <p>We prioritize your project security and design confidentiality. In strict compliance with Autodesk App Store Developer Guidelines, our software operates using a fully transparent, localized architecture.</p>
+        <ul>
+            <li><strong>Zero Data Exfiltration:</strong> We do not collect, view, store, or transmit your CAD drawing files (<code>.dwg</code>), design variations, project metadata, or any corporate intellectual property.</li>
+            <li><strong>Secure Local Storage:</strong> All licensing preferences and system configurations are saved locally on your workstation within the secure Windows Registry hive (<code>HKEY_CURRENT_USER\Software\DAB_ANY\...</code>).</li>
+            <li><strong>No Tracking:</strong> This software operates free of third-party analytics trackers, background metrics collection, or behavioral profiling scripts. Network access is strictly restricted to secure API validation during software activation.</li>
+        </ul>
+        <p>The comprehensive policy is published online for legal, corporate infrastructure, and IT clearance reviews. You can access the live updates directly here: <a href="https://dabanycadtool.github.io/dabany-policy/" target="_blank">DaB ANY CAD Privacy Policy & Terms</a>.</p>
 
         <h2 id="how-to-use-the-application">How to Use the Application</h2>
         <div class="construction-box">Under Construction — Step-by-step operational workflows under review.</div>
