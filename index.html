@@ -830,14 +830,7 @@
    <h3>Parametric Property Matrix</h3>
         <p>The table below outlines the structural properties exposed within the control grid when a BOULEVARD component is actively selected:</p>
 
-
-                <!-- ========================================== -->
-        <!-- EARTHWORKS & DRAINAGE                      -->
-        <!-- ========================================== -->
-        <h2 id="earthworks-drainage">Earthworks &amp; Drainage Elements</h2>
-        <p>Earthworks and Drainage elements model structural grading transitions, embankment protections, and dynamic benching systems. These components allow your assembly corridor to step, profile, or slope safely down or up to target daylight interfaces.</p>
-
-        <!-- SUB-ELEMENT: EARTHWORK BUFFER -->
+             <!-- SUB-ELEMENT: EARTHWORK BUFFER -->
         <h3 id="earthwork-buffer" style="color: #0366d6; font-size: 1.3em; margin-top: 30px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BUFFER (Grading Margin)</h3>
         <p>This configuration of the <strong>BUFFER</strong> element acts as a clear grading margin or right-of-way flat tolerance zone before initiating heavy side slopes or embankment structures.</p>
 
@@ -895,6 +888,18 @@
                 </tr>
             </tbody>
         </table>
+
+               <h3>🛠️ Advanced Structural Modeling Note</h3>
+        <p>By adjusting variables <code>Dim A</code> through <code>Dim F</code>, engineers can dynamically modify vectors to recreate localized public works municipal standards. Setting <code>Dim B</code> (Gutter Width) to 0, for instance, allows the vector layout module to draw a seamless <strong>Barrier/Vertical Curb</strong> directly against the driving lane boundary without generating an apron link.</p>
+
+
+                <!-- ========================================== -->
+        <!-- EARTHWORKS & DRAINAGE                      -->
+        <!-- ========================================== -->
+        <h2 id="earthworks-drainage">Earthworks &amp; Drainage Elements</h2>
+        <p>Earthworks and Drainage elements model structural grading transitions, embankment protections, and dynamic benching systems. These components allow your assembly corridor to step, profile, or slope safely down or up to target daylight interfaces.</p>
+
+       
 
         <!-- SUB-ELEMENT: BERM -->
         <h3 id="berm-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BERM</h3>
