@@ -18,73 +18,107 @@
     </style>
 </head>
 <body>
-        <nav>
+            <nav style="width: 300px; background: #fff; height: 100vh; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.05); position: fixed; overflow-y: auto; box-sizing: border-box;">
         <!-- Logo Image -->
-        <div style="text-align: left; margin-bottom: 20px;">
+        <div style="text-align: left; margin-bottom: 25px;">
             <img src="DaB_ANY_Logo.png" alt="DaB ANY CAD Tools" style="width: 100%; max-width: 220px; height: auto;">
         </div>
 
-        <h3>1. Overview</h3>
-        <ul>
-            <li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="#licence">Licence</a></li>
-            <li><a href="#policy">Policy</a></li>
-        </ul>
-        <h3>2. Core Operation</h3>
-        <ul>
-            <li><a href="#how-to-use-the-application">How to Use the Application</a></li>
-            <li><a href="#typical-section-element">Typical Section Element</a></li>
-            <li><a href="#assembly-composer">Assembly Composer</a></li>
-            <li><a href="#element-properties">Element Properties</a></li>
-            <li><a href="#section-placement-options">Section Placement Options</a></li>
-        </ul>
-        <h3>3. Typical Section Elements</h3>
-        <ul>
-            <li><a href="#roadway-geometry">RoadWay Geometry</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#lane-element">↳ LANE</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#shoulder-element">↳ SHOULDER</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#median-element">↳ MEDIAN</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#curb-gutter-element">↳ CURB &amp; GUTTER</a></li>
-            
-            <li style="margin-top: 10px;"><a href="#streetscape-road-side-features">Streetscape / Roadside Features</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#pathway-element">↳ Pathway</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#boulevard-element">↳ Boulevard</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#buffer-element">↳ Buffer Zone</a></li>
-            
-            <li style="margin-top: 10px;"><a href="#earthworks-drainage">Earthworks &amp; Drainage</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#ditch-element">↳ Ditch</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#side-slope-element">↳ Side Slope</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#bench-element">↳ Bench</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#berm-element">↳ Berm</a></li>
-            
-            <li style="margin-top: 10px;"><a href="#barriers-walls-misc">Barriers, Walls &amp; Misc</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#barrier-component">↳ Barrier</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#retaining-wall-element">↳ Retaining Wall</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#property-line-component">↳ Property Line</a></li>
-            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#null-element-component">↳ Null Element</a></li>
-        </ul>
-        <h3>4. Styles &amp; Customization</h3>
-        <ul>
-            <li><a href="#render-style">Render Style</a></li>
-            <li><a href="#material-style">Material Style</a></li>
-            <li><a href="#annotation-style">Annotation Style</a></li>
-            <li><a href="#supplemental-elements">Supplemental Elements</a></li>
-        </ul>
-        <h3>5. Live Preview</h3>
-        <ul>
-            <li><a href="#live-preview-window">Live Preview Window</a></li>
-            <li><a href="#view-mode">View Mode</a></li>
-            <li><a href="#theme">Theme</a></li>
-            <li><a href="#text-color">Text Color</a></li>
-            <li><a href="#font">Font</a></li>
-            <li><a href="#text-style">Text Style</a></li>
-            <li><a href="#export">Export</a></li>
-        </ul>
-        <h3>6. AutoCAD Section</h3>
-        <ul>
-            <li><a href="#generate-section">Generate AutoCAD Section</a></li>
-        </ul>
+        <style>
+            details { margin-bottom: 15px; }
+            summary { font-size: 1.1em; font-weight: bold; color: #111; cursor: pointer; padding: 5px 0; border-bottom: 1px solid #eaeaea; list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center; }
+            summary::-webkit-details-marker { display: none; }
+            summary::after { content: "▸"; font-size: 0.8em; color: #777; transition: transform 0.2s ease; }
+            details[open] summary::after { content: "▾"; }
+            details ul { list-style: none; padding-left: 5px; margin-top: 8px; margin-bottom: 0; }
+            details li { margin: 8px 0; }
+        </style>
+
+        <!-- CHAPTER 1 -->
+        <details open>
+            <summary>1. Overview</summary>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#licence">Licence</a></li>
+                <li><a href="#policy">Policy</a></li>
+            </ul>
+        </details>
+
+        <!-- CHAPTER 2 -->
+        <details>
+            <summary>2. Core Operation</summary>
+            <ul>
+                <li><a href="#how-to-use-the-application">How to Use the Application</a></li>
+                <li><a href="#typical-section-element">Typical Section Element</a></li>
+                <li><a href="#assembly-composer">Assembly Composer</a></li>
+                <li><a href="#element-properties">Element Properties</a></li>
+                <li><a href="#section-placement-options">Section Placement Options</a></li>
+            </ul>
+        </details>
+
+        <!-- CHAPTER 3 -->
+        <details open>
+            <summary>3. Typical Section Elements</summary>
+            <ul>
+                <li><a href="#roadway-geometry" style="font-weight: 600; color: #333;">RoadWay Geometry</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#lane-element">↳ LANE</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#shoulder-element">↳ SHOULDER</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#median-element">↳ MEDIAN</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#curb-gutter-element">↳ CURB &amp; GUTTER</a></li>
+                
+                <li style="margin-top: 12px;"><a href="#streetscape-road-side-features" style="font-weight: 600; color: #333;">Streetscape / Roadside Features</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#pathway-element">↳ Pathway</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#boulevard-element">↳ Boulevard</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#buffer-element">↳ Buffer Zone</a></li>
+                
+                <li style="margin-top: 12px;"><a href="#earthworks-drainage" style="font-weight: 600; color: #333;">Earthworks &amp; Drainage</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#ditch-element">↳ Ditch</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#side-slope-element">↳ Side Slope</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#bench-element">↳ Bench</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#berm-element">↳ Berm</a></li>
+                
+                <li style="margin-top: 12px;"><a href="#barriers-walls-misc" style="font-weight: 600; color: #333;">Barriers, Walls &amp; Misc</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#barrier-component">↳ Barrier</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#retaining-wall-element">↳ Retaining Wall</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#property-line-component">↳ Property Line</a></li>
+                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#null-element-component">↳ Null Element</a></li>
+            </ul>
+        </details>
+
+        <!-- CHAPTER 4 -->
+        <details>
+            <summary>4. Styles &amp; Customization</summary>
+            <ul>
+                <li><a href="#render-style">Render Style</a></li>
+                <li><a href="#material-style">Material Style</a></li>
+                <li><a href="#annotation-style">Annotation Style</a></li>
+                <li><a href="#supplemental-elements">Supplemental Elements</a></li>
+            </ul>
+        </details>
+
+        <!-- CHAPTER 5 -->
+        <details>
+            <summary>5. Live Preview</summary>
+            <ul>
+                <li><a href="#live-preview-window">Live Preview Window</a></li>
+                <li><a href="#view-mode">View Mode</a></li>
+                <li><a href="#theme">Theme</a></li>
+                <li><a href="#text-color">Text Color</a></li>
+                <li><a href="#font">Font</a></li>
+                <li><a href="#text-style">Text Style</a></li>
+                <li><a href="#export">Export</a></li>
+            </ul>
+        </details>
+
+        <!-- CHAPTER 6 -->
+        <details>
+            <summary>6. AutoCAD Section</summary>
+            <ul>
+                <li><a href="#generate-section">Generate AutoCAD Section</a></li>
+            </ul>
+        </details>
     </nav>
+
 
 
     <main>
