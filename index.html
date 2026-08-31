@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <nav>
+        <nav>
         <!-- Logo Image -->
         <div style="text-align: left; margin-bottom: 20px;">
             <img src="DaB_ANY_Logo.png" alt="DaB ANY CAD Tools" style="width: 100%; max-width: 220px; height: auto;">
@@ -41,11 +41,29 @@
         <h3>3. Typical Section Elements</h3>
         <ul>
             <li><a href="#roadway-geometry">RoadWay Geometry</a></li>
-            <li><a href="#streetscape-road-side-features">Streetscape / Roadside Features</a></li>
-            <li><a href="#earthworks-drainage">Earthworks & Drainage</a></li>
-            <li><a href="#barriers-walls-misc">Barriers, Walls & Misc</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#lane-element">↳ LANE</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#shoulder-element">↳ SHOULDER</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#median-element">↳ MEDIAN</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#curb-gutter-element">↳ CURB &amp; GUTTER</a></li>
+            
+            <li style="margin-top: 10px;"><a href="#streetscape-road-side-features">Streetscape / Roadside Features</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#pathway-element">↳ Pathway</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#boulevard-element">↳ Boulevard</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#buffer-element">↳ Buffer Zone</a></li>
+            
+            <li style="margin-top: 10px;"><a href="#earthworks-drainage">Earthworks &amp; Drainage</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#ditch-element">↳ Ditch</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#side-slope-element">↳ Side Slope</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#bench-element">↳ Bench</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#berm-element">↳ Berm</a></li>
+            
+            <li style="margin-top: 10px;"><a href="#barriers-walls-misc">Barriers, Walls &amp; Misc</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#barrier-component">↳ Barrier</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#retaining-wall-element">↳ Retaining Wall</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#property-line-component">↳ Property Line</a></li>
+            <li style="padding-left: 15px; font-size: 0.9em;"><a href="#null-element-component">↳ Null Element</a></li>
         </ul>
-        <h3>4. Styles & Customization</h3>
+        <h3>4. Styles &amp; Customization</h3>
         <ul>
             <li><a href="#render-style">Render Style</a></li>
             <li><a href="#material-style">Material Style</a></li>
@@ -67,6 +85,7 @@
             <li><a href="#generate-section">Generate AutoCAD Section</a></li>
         </ul>
     </nav>
+
 
     <main>
         <h1>DaB ANY CAD: Typical Section Utility — User Manual</h1>
@@ -899,7 +918,123 @@
         <h2 id="earthworks-drainage">Earthworks &amp; Drainage Elements</h2>
         <p>Earthworks and Drainage elements model structural grading transitions, embankment protections, and dynamic benching systems. These components allow your assembly corridor to step, profile, or slope safely down or up to target daylight interfaces.</p>
 
-       
+                 <!-- SUB-ELEMENT: SIDE_SLOPE -->
+        <h3 id="side-slope-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: SIDE_SLOPE (Daylight Grading)</h3>
+        <p>The <strong>SIDE_SLOPE</strong> subassembly acts as the primary daylighting utility for your design corridor. It projects a grading link outward at an explicit horizontal-to-vertical ratio to tie the outer edge of your roadway or streetscape features smoothly back into existing ground boundaries.</p>
+
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your side slope diagram image file as 'side_slope_diagram.png' next to this HTML file -->
+            <img src="side_slope_diagram.png" alt="SIDE_SLOPE Parametric Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.8: SIDE_SLOPE Grading Targets in Cut vs. Fill Structural States</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The table below outlines the properties exposed within the control grid when a SIDE_SLOPE component is active:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Placement Side</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Right</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Flips the geometry script orientation. Options are <strong>Left</strong> or <strong>Right</strong> relative to the active layout progression.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute horizontal span width projected by the catch grading slope before hitting target interfaces.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Slope Ratio</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3:1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (H:V)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The grading slope ratio. Input configurations express horizontal run relative to a single unit vertical rise/fall.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Condition</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Fill</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Calculated state logic controller. Toggles between <strong>Fill</strong> (for embankments dropping down to meet terrain) or <strong>Cut</strong> (for trenches stepping up into higher native terrain).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🛠️ Conditional Execution Mechanics</h3>
+        <p>The <code>Condition</code> dropdown switches the geometric plotting routine of the vector compiler path:</p>
+        <ul>
+            <li><strong>Fill Layout State:</strong> The slope vector projects downwards at your assigned <code>Slope Ratio</code> (e.g., dropping 1 meter vertically for every 3 meters advanced horizontally).</li>
+            <li><strong>Cut Layout State:</strong> The slope vector flips direction, climbing upwards at the exact same ratio threshold to smoothly map embankment cuts without requiring separate subassembly nodes.</li>
+        </ul>
+    
+            
+            
+            <!-- SUB-ELEMENT: DITCH -->
+        <h3 id="ditch-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: DITCH (Drainage Channel)</h3>
+        <p>The <strong>DITCH</strong> element models a parametric trapezoidal stormwater drainage channel alongside the roadway corridor. It features independent control links for a flat ditch invert floor width, explicit channel cut depths, and unique side slopes to route run-off safely away from the structural subgrade layers.</p>
+
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your ditch diagram image file as 'ditch_diagram.png' next to this HTML file -->
+            <img src="ditch_diagram.png" alt="DITCH Drainage Parametric Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.7: DITCH Trapezoidal Invert Width, Channel Cut Depths, and Side Slopes</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The table below outlines the properties exposed within the control grid when a DITCH component is actively modified:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 30%;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 15%;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Placement Side</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>Right</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Flips the layout orientation. Options are <strong>Left</strong> or <strong>Right</strong> relative to the structural assembly path.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Ditch Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The absolute vertical depth measured from the incoming attachment hinge point down to the flat channel invert.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Ditch Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal length spanning across the flat bottom channel invert bed link.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Foreslope Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3:1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (H:V)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The slope projection ratio tracking down the descending front face link into the ditch bottom.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Backslope Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3:1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (H:V)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The slope projection ratio tracking up the ascending back face link to tie back out to the natural grade daylight.</td>
+                </tr>
+            </tbody>
+        </table>
+
 
         <!-- SUB-ELEMENT: BERM -->
         <h3 id="berm-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: BERM</h3>
