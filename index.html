@@ -4,35 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Manual - DaB ANY Typical Section Utility</title>
+    
     <style>
+        /* Base Page Layout */
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; display: flex; background: #f9f9f9; color: #333; }
-        nav { width: 300px; background: #fff; height: 100vh; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.05); position: fixed; overflow-y: auto; }
         main { margin-left: 340px; padding: 40px; max-width: 800px; background: #fff; margin-top: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); width: 100%; }
-        h3 { color: #111; margin-top: 25px; border-bottom: 1px solid #eaeaea; padding-bottom: 5px; font-size: 1.1em; }
+        
+        /* Main Body Headers */
         h2 { color: #222; margin-top: 40px; border-bottom: 2px solid #0366d6; padding-bottom: 8px; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 6px 0; }
-        a { color: #0366d6; text-decoration: none; font-size: 0.95em; }
-        a:hover { text-decoration: underline; }
+        h3 { color: #111; margin-top: 25px; border-bottom: 1px solid #eaeaea; padding-bottom: 5px; font-size: 1.1em; }
+        
+        /* Global Navigation Structural Constraints */
+        nav { width: 300px; background: #fff; height: 100vh; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.05); position: fixed; overflow-y: auto; box-sizing: border-box; }
+        
+        /* Collapsible Menu Components */
+        details { margin-bottom: 15px; }
+        summary { font-size: 1.1em; font-weight: 700; color: #111; cursor: pointer; padding: 6px 0; border-bottom: 2px solid #0366d6; display: flex; justify-content: space-between; align-items: center; outline: none; list-style: none; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "▸"; font-size: 0.8em; color: #0366d6; transition: transform 0.2s ease; }
+        details[open] summary::after { content: "▾"; }
+        
+        /* Clean Technical Documentation Style Group Subheaders */
+        .nav-group-header { font-size: 0.85em; font-weight: 700; color: #586069; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 6px; }
+        
+        /* Navigation Links & Lists */
+        nav ul { list-style: none; padding-left: 0; margin: 0; }
+        nav li { margin: 6px 0; padding-left: 12px; border-left: 1px solid #e1e4e8; }
+        nav li a { color: #0366d6; font-size: 0.95em; text-decoration: none; }
+        nav li a:hover { color: #0056b3; text-decoration: underline; }
+        
+        /* Miscellaneous Alerts */
         .construction-box { background: #fff8dc; border-left: 4px solid #ffb900; padding: 15px; margin: 15px 0; border-radius: 4px; color: #856404; font-weight: 500; }
     </style>
 </head>
 <body>
-            <nav style="width: 300px; background: #fff; height: 100vh; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.05); position: fixed; overflow-y: auto; box-sizing: border-box;">
+
+    <nav>
         <!-- Logo Image -->
         <div style="text-align: left; margin-bottom: 25px;">
             <img src="DaB_ANY_Logo.png" alt="DaB ANY CAD Tools" style="width: 100%; max-width: 220px; height: auto;">
         </div>
-
-        <style>
-            details { margin-bottom: 15px; }
-            summary { font-size: 1.1em; font-weight: bold; color: #111; cursor: pointer; padding: 5px 0; border-bottom: 1px solid #eaeaea; list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center; }
-            summary::-webkit-details-marker { display: none; }
-            summary::after { content: "▸"; font-size: 0.8em; color: #777; transition: transform 0.2s ease; }
-            details[open] summary::after { content: "▾"; }
-            details ul { list-style: none; padding-left: 5px; margin-top: 8px; margin-bottom: 0; }
-            details li { margin: 8px 0; }
-        </style>
 
         <!-- CHAPTER 1 -->
         <details open>
@@ -60,28 +71,28 @@
         <details open>
             <summary>3. Typical Section Elements</summary>
             <ul>
-                <li><a href="#roadway-geometry" style="font-weight: 600; color: #333;">RoadWay Geometry</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#lane-element">↳ LANE</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#shoulder-element">↳ SHOULDER</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#median-element">↳ MEDIAN</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#curb-gutter-element">↳ CURB &amp; GUTTER</a></li>
+                <div class="nav-group-header">RoadWay Geometry</div>
+                <li><a href="#lane-element">LANE</a></li>
+                <li><a href="#shoulder-element">SHOULDER</a></li>
+                <li><a href="#median-element">MEDIAN</a></li>
+                <li><a href="#curb-gutter-element">CURB &amp; GUTTER</a></li>
                 
-                <li style="margin-top: 12px;"><a href="#streetscape-road-side-features" style="font-weight: 600; color: #333;">Streetscape / Roadside Features</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#pathway-element">↳ Pathway</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#boulevard-element">↳ Boulevard</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#buffer-element">↳ Buffer Zone</a></li>
+                <div class="nav-group-header">Streetscape / Roadside</div>
+                <li><a href="#pathway-element">Pathway</a></li>
+                <li><a href="#boulevard-element">Boulevard</a></li>
+                <li><a href="#buffer-element">Buffer Zone</a></li>
                 
-                <li style="margin-top: 12px;"><a href="#earthworks-drainage" style="font-weight: 600; color: #333;">Earthworks &amp; Drainage</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#ditch-element">↳ Ditch</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#side-slope-element">↳ Side Slope</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#bench-element">↳ Bench</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#berm-element">↳ Berm</a></li>
+                <div class="nav-group-header">Earthworks &amp; Drainage</div>
+                <li><a href="#ditch-element">Ditch</a></li>
+                <li><a href="#side-slope-element">Side Slope</a></li>
+                <li><a href="#bench-element">Bench</a></li>
+                <li><a href="#berm-element">Berm</a></li>
                 
-                <li style="margin-top: 12px;"><a href="#barriers-walls-misc" style="font-weight: 600; color: #333;">Barriers, Walls &amp; Misc</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#barrier-component">↳ Barrier</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#retaining-wall-element">↳ Retaining Wall</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#property-line-component">↳ Property Line</a></li>
-                <li style="padding-left: 15px; font-size: 0.9em;"><a href="#null-element-component">↳ Null Element</a></li>
+                <div class="nav-group-header">Barriers, Walls &amp; Misc</div>
+                <li><a href="#barrier-component">Barrier</a></li>
+                <li><a href="#retaining-wall-element">Retaining Wall</a></li>
+                <li><a href="#property-line-component">Property Line</a></li>
+                <li><a href="#null-element-component">Null Element</a></li>
             </ul>
         </details>
 
@@ -118,6 +129,18 @@
             </ul>
         </details>
     </nav>
+
+    <!-- Main Content Container Frame -->
+    <main>
+        <h1>DaB ANY CAD: Typical Section Utility — User Manual</h1>
+        <p>Welcome to the official documentation. Select any chapter from the left-hand navigation index to view specific guidelines.</p>
+        
+        <!-- Chapter contents append directly down here -->
+    </main>
+
+</body>
+</html>
+
 
 
 
