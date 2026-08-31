@@ -116,9 +116,7 @@
         </ul>
         <p>The comprehensive policy is published online for legal, corporate infrastructure, and IT clearance reviews. You can access the live updates directly here: <a href="https://dabanycadtool.github.io/dabany-policy/" target="_blank">DaB ANY CAD Privacy Policy & Terms</a>.</p>
 
-                <!-- ========================================== -->
-        <!-- CHAPTER 2: CORE OPERATION                  -->
-        <!-- ========================================== -->
+              
                <!-- ========================================== -->
         <!-- CHAPTER 2: CORE OPERATION                  -->
         <!-- ========================================== -->
@@ -287,6 +285,104 @@
             <li><strong>When set to ON:</strong> The utility completely forces an alternate layout vector pass using the dimensional criteria defined in the <code>Measurement Override</code> field. This is optimal for quickly modeling variable turn-bay lanes, localized road tapers, or custom intersection geometry rules without needing to change standard lane blocks.</li>
         </ul>
 
+        <!-- SUB-ELEMENT: SHOULDER -->
+        <h3 id="shoulder-element" style="color: #0366d6; font-size: 1.3em; margin-top: 40px; border-bottom: 1px solid #0366d6; padding-bottom: 3px;">Element Profile: SHOULDER</h3>
+        <p>The <strong>SHOULDER</strong> element constructs a flexible roadside structural shoulder. It features an integrated drainage fall slope, layered pavement stratigraphy depths, and smart contextual <strong>Daylight Grade</strong> boundaries that can target your existing ground or embankment zones.</p>
+
+        <!-- Dynamic Visual Diagram Reference -->
+        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
+            <!-- Save your shoulder diagram image file as 'shoulder_diagram.png' next to this HTML file -->
+            <img src="shoulder_diagram.png" alt="SHOULDER Parametric Diagram" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
+            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 3.2: SHOULDER Geometry Parameters and Grading Daylights</p>
+        </div>
+
+        <h3>Parametric Property Matrix</h3>
+        <p>The table below outlines the properties exposed within the control grid when a SHOULDER component is actively modified:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Property Field</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Default Value</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Unit Type</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea;">Engineering Functional Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Name</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>SHLD</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Alphanumeric</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The tree node identifier label assigned within the active Assembly Composer workstation.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Shoulder Width</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.5</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal dimension of the shoulder platform calculated from the prior connection point link.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Shoulder % Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>-2.0</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Percentage (%)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Surface cross-slope drainage grade. Standard road profiles utilize negative variables to pitch run-off outward.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Daylight Side</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>None</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dropdown List</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Controls structural intercept projection. Assignable to <strong>None</strong>, <strong>Left</strong>, or <strong>Right</strong> based on assembly positioning.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Daylight Slope</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>3:1</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Ratio (H:V)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The horizontal-to-vertical geometry grading configuration used to tie the outer shoulder edge link down to your finish line catchments.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Pave-1 Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.05</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth profile boundary of the primary top wearing pavement course layer.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Pave-2 Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.05</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical depth thickness configuration for the secondary structural binding pavement course layer.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.15</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical thickness dimension profile mapping the crushed granular stone structural base profile.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sub-Base Depth</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>0.30</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Vertical calculation thickness targeting the select subgrade ballast structural layer.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Shoulder Width Override Enabled</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>OFF</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">ON / OFF Toggle</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">State logic engine modifier. Toggling to <strong>ON</strong> overrides the default width tracking configuration.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Measurement Override</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><code>1.50</code></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Meters (m)</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">The explicit horizontal alternative parameter applied to vector calculations when the width override logic is activated.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🛠️ Structural Daylight &amp; Override Mechanics</h3>
+        <ul>
+            <li><strong>Daylight Intercepts:</strong> When <code>Daylight Side</code> is designated as <em>Left</em> or <em>Right</em>, the engine projects a vector line outward matching your <code>Daylight Slope</code> ratio parameter (e.g., 3 units horizontal for every 1 unit vertical drop) to cleanly establish cut or fill boundary profiles.</li>
+            <li><strong>Width Overrides:</strong> Enabling <code>Shoulder Width Override Enabled</code> forces the engine to bypass your standard 1.5m platform width value. It drops in your exact <code>Measurement Override</code> threshold values—allowing seamless grading calculations for varying shoulder widths along constraints like bridge touch-downs or custom pull-out zones.</li>
+        </ul>
 
         <h2 id="streetscape-road-side-features">Streetscape / Roadside Features</h2>
         <div class="construction-box">Under Construction — Feature list expansion underway.</div>
