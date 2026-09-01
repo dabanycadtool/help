@@ -36,8 +36,20 @@
         /* Miscellaneous Alerts */
         .construction-box { background: #fff8dc; border-left: 4px solid #ffb900; padding: 15px; margin: 15px 0; border-radius: 4px; color: #856404; font-weight: 500; }
     </style>
+
+    <!-- Automated Scroll-to-Top Logic Execution Script -->
+    <script>
+        // Forces browser focus and layout anchors back to absolute zero coordinates on first initial boot
+        window.addEventListener('DOMContentLoaded', () => {
+            // Short timeout ensures layout heights calculate fully before applying absolute positioning shifts
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 10);
+        });
+    </script>
 </head>
 <body>
+
 
        <nav>
         <!-- Logo Image -->
