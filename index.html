@@ -2064,9 +2064,31 @@ h style="padding: 8px; border: 1px solid #eaeaea; width: 30%;">Property Field</t
         <p>This automated engine outputs all configured layer fills, material hatch configurations, custom background imagery styles, and nested entourage elements with absolute clarity. It is designed to allow engineers to rapidly gather clean presentation graphics for project design memos, client pitch decks, or environmental impact assessment manuals without needing to run vector generation passes inside AutoCAD first.</p>
 
 
-        <h2 id="generate-section">Generate AutoCAD Section</h2>
-        <div class="construction-box">Under Construction — Final execution pipeline documentation coming soon.</div>
-        <p>Executing the final routine to draw and assemble your typical cross-section directly into AutoCAD / Civil 3D.</p>
+                <!-- ========================================== -->
+        <!-- CHAPTER 6: AUTOCAD SECTION                 -->
+        <!-- ========================================== -->
+        <h2 id="generate-section">Chapter 6: AutoCAD Section Generation</h2>
+        <p>The <strong>Generate AutoCAD Section</strong> routine is the final execution stage of your design workflow. Clicking this primary command button processes your custom parametric input script and translates it directly into clean, native AutoCAD vector objects, layered hatch blocks, and dimension entities inside your active drawing file (<code>.dwg</code>).</p>
+        
+        <h3>⚙️ Multi-Axis Compilation Engine</h3>
+        <p>When execution is initialized, the plug-in reads and builds the physical assembly geometry by compiling three major configuration systems managed in previous sections:</p>
+        <ul>
+            <li><strong>Assembly Tree Architecture:</strong> The geometric arrangement and stacking sequence of civil components are parsed directly from your configured <a href="#assembly-composer">Assembly Composer</a> matrix.</li>
+            <li><strong>Independent Axis Scaling:</strong> The horizontal and vertical drawing lengths are multiplied explicitly by the <strong>Scale X (Horizontal Scale Factor)</strong> and <strong>Scale Y (Vertical Scale Factor)</strong> variables defined within the <a href="#section-placement-options">Section Placement Options</a> framework. This allows you to generate vertically exaggerated profiles instantly.</li>
+            <li><strong>Presentation Layer &amp; Fill Rules:</strong> The layout structure, pattern fills, and coloring rules conform precisely to your selected global <a href="#render-style">Render Style</a> option, utilizing the exact layer names, patterns, and ACI colors assigned inside the <a href="#material-style">Material Style Manager Matrix</a>.</li>
+            <li><strong>Drafting Dimension Blocks:</strong> Leader tracks, cross-slope markers, and text scales are laid out natively on predetermined layers matching the thresholds enforced inside the <a href="#annotation-style">Annotation Style Configuration</a> panel.</li>
+        </ul>
+
+        <h3>🛠️ Execution &amp; Model Space Insertion Steps</h3>
+        <p>To compile and drop your structural section into your active drawing canvas, execute the following sequence:</p>
+        <ol style="line-height: 1.7; margin-left: 20px; margin-top: 10px;">
+            <li>Verify your current design template inside the <a href="#live-preview-window">Live Preview Window</a> to ensure all parameters are correct.</li>
+            <li>Navigate to the bottom execution panel of the primary WPF palette set and click the green <strong>Generate Section</strong> command action button.</li>
+            <li>The palette window will temporarily yield focus, and a prompt will appear on your AutoCAD command line interface: <strong style="color: #0366d6;">"Specify section insertion point:"</strong>.</li>
+            <li>Move your cursor over your active model space drawing viewport canvas and click to designate your desired target coordinate insertion point.</li>
+            <li>The engine will draw all links, shapes, annotations, and structural entourage blocks instantly. All created vectors are native AutoCAD objects (such as heavy 2D closed polylines, texts, and hatches), allowing you to modify them later using standard editing commands if necessary.</li>
+        </ol>
+
     </main>
 </body>
 </html>
