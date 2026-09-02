@@ -1939,89 +1939,49 @@ h style="padding: 8px; border: 1px solid #eaeaea; width: 30%;">Property Field</t
         </ul>
 
       
-               <!-- ========================================== -->
-        <!-- CHAPTER 5: LIVE PREVIEW WINDOW             -->
+            <!-- ========================================== -->
+        <!-- CHAPTER 5: LIVE PREVIEW WORKSTATION        -->
         <!-- ========================================== -->
-        <h2 id="live-preview-window">Chapter 5: Live Preview Window</h2>
+        <h2>Chapter 5: Live Preview Workstation</h2>
+        
+        <!-- SECTION 5.1 -->
+        <h3 id="live-preview-window">5.1 Live Preview Window</h3>
         <p>The <strong>Live Preview Window</strong> is an advanced, decoupled WPF presentation window that acts as a real-time geometry validation sandbox. Directly synchronized with the primary AutoCAD palette set, this window instantly renders your modular section blocks as they are being stacked, re-ordered, and customized inside the Assembly Composer.</p>
         <p>The primary purpose of the Live Preview workspace is to allow civil engineers and urban planners to interactively evaluate cross-section modifications on the fly—providing an instant visual safety loop before committing vector objects, blocks, or heavy material hatches to your active AutoCAD drawing template (<code>.dwg</code>).</p>
 
-        <!-- Dynamic Visual Diagram Reference -->
-        <div style="background: #1e1e1e; padding: 20px; border-radius: 6px; text-align: center; margin: 20px 0; border: 1px solid #333;">
-            <!-- Save your preview window screenshot as 'live_preview_window.png' next to this HTML file -->
-            <img src="live_preview_window.png" alt="Live Preview Window Presentation Interface Workspace" style="max-width: 100%; height: auto; border: 1px solid #444; border-radius: 4px;">
-            <p style="color: #aaa; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; font-family: monospace;">Figure 5.1: Real-Time Verification Sandbox Canvas and Detached Render Console</p>
-        </div>
-
-        <h3>Interactive Control Elements &amp; Core Toolsets</h3>
-        <p>Beyond operating as a native geometry viewer, the Live Preview window contains dedicated presentation engines to modify presentation layers and extract raster graphics:</p>
+        <!-- SECTION 5.2 -->
+        <h3 id="view-mode">5.2 View Mode Variations</h3>
+        <p>The Live Preview interface exposes three specialized presentation display settings to control the visual rendering of the active workspace corridor assembly. Toggling between these modes changes how core subassembly structure hashes are processed and determines how advanced entourage assets are rendered on the preview screen:</p>
 
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
             <thead>
                 <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
-                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">Workspace Engine</th>
-                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 20%;">Configurable Parameters</th>
-                    <th style="padding: 10px; border: 1px solid #eaeaea;">Functional Role &amp; Application Utility</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">Preview View Mode</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 35%;">Section Element Hatching Behavior</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 40%;">Supplemental Element (Entourage) Representation</th>
                 </tr>
             </thead>
             <tbody>
-                <tr id="view-mode">
-                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>View Mode</strong></td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">Wireframe / Hatch / Solid</td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">Mirrors your intended AutoCAD <a href="#render-style">Render Style</a> selections. It allows for immediate evaluation of structural stratigraphy lines, complex geometric hatch densities, or solid exhibit blocks.</td>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Wireframe</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Displays bare structural links, geometry lines, and boundary points. Completely strips out all interior fills.</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Renders as simple, lightweight outline silhouettes or structural boundary markers.</td>
                 </tr>
-                <tr style="background-color: #fafbfc;" id="theme">
-                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Theme</strong></td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">Light / Dark Color Spaces</td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">Changes the rendering canvas background space. Toggle to Dark Theme to preview how vectors will pop against standard AutoCAD model space, or shift to Light Theme for paper space plot validations.</td>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Shaded</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Applies customizable rich material color fields and gradient fills based directly on <a href="#material-style">Material Style</a> parameters.</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Displays detailed, semi-shaded or fully modeled high-fidelity raster entourage assets (e.g., realistic cars, detailed people).</td>
                 </tr>
-                <tr id="text-style">
-                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Labels &amp; Dimensions</strong></td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">Font / Text Color Toggles</td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">Dynamically draws annotation leaders, cross-slopes, and element identifiers on the preview board. Users can switch label colors and global fonts to check readability metrics instantly.</td>
-                </tr>
-                <tr style="background-color: #fafbfc;" id="export">
-                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Image Export Engine</strong></td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">High-Resolution Capture</td>
-                    <td style="padding: 10px; border: 1px solid #eaeaea;">Bypasses CAD entirely to render your configured section directly out to an external image graphic file (e.g., <code>.png</code>). Ideal for inserting rapid project graphics into report documents, design memos, or client slide decks.</td>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Schematic</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Renders simplified technical engineering patterns and schematic line work boundaries suitable for contract plan review.</td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Transforms assets into stylized schematic block glyphs or clean engineering icons (e.g., simple vehicle boxes, icon trees).</td>
                 </tr>
             </tbody>
         </table>
 
-        <h3>🛠️ Step-by-Step Live Validation Workflow</h3>
-        <ol style="line-height: 1.7; margin-left: 20px; margin-top: 10px;">
-            <li><strong>Launch the Sandbox:</strong> Click the <strong>Open Live Preview</strong> anchor inside your primary palette. A separate, floating WPF display console will materialize.</li>
-            <li><strong>Arrange Monitor Focus:</strong> Drag the preview window to an independent secondary screen to establish an unhindered design viewport parallel to your main AutoCAD drawing canvas.</li>
-            <li><strong>Manipulate Section Parameters:</strong> Adjust width spinner fields or toggle element placement settings back inside the palette. Notice the preview window updates its vector links in real time (zero lagging/refreshing delays).</li>
-            <li><strong>Configure Styles:</strong> Use the preview tool bar options to assign your preferred <code>View Mode</code> and flip canvas <code>Themes</code> to check background contrast metrics.</li>
-            <li><strong>Verify Labels:</strong> Activate data tags and toggle text scales to verify extension dimensions are not textually overlapping physical objects or curb lips.</li>
-            <li><strong>Extract Layout Images:</strong> If preparing documentation updates, hit the <strong>Export Image</strong> control to write the cleanly rendered graphic scene out to disk as a separate high-resolution file asset.</li>
-        </ol>
+        <p>By shifting styles between these three states, designers can rapidly switch their workstation focus from verifying raw geometric slopes over to reviewing presentation exhibits or validating technical construction pattern depths inside a single environment.</p>
 
-
-        <h2 id="view-mode">View Mode</h2>
-        <div class="construction-box">Under Construction — View toggle configurations incoming.</div>
-        <p>Switching between schematic, rendered, and wireframe live preview states.</p>
-
-        <h2 id="theme">Theme</h2>
-        <div class="construction-box">Under Construction — UI theme styling options being finalized.</div>
-        <p>Managing light and dark user interface color palettes within the preview panel.</p>
-
-        <h2 id="text-color">Text Color</h2>
-        <div class="construction-box">Under Construction — Color override guidelines coming soon.</div>
-        <p>Customizing text contrast and annotation label colors for preview readability.</p>
-
-        <h2 id="font">Font</h2>
-        <div class="construction-box">Under Construction — Font selection specs in progress.</div>
-        <p>Managing system font family bindings for live drawing text elements.</p>
-
-        <h2 id="text-style">Text Style</h2>
-        <div class="construction-box">Under Construction — Typography scaling options under review.</div>
-        <p>Adjusting text size heights, style bindings, and annotation spacing factors.</p>
-
-        <h2 id="export">Export</h2>
-        <div class="construction-box">Under Construction — Export format specifications pending.</div>
-        <p>Exporting preview snapshots or configurations for external reporting.</p>
 
         <h2 id="generate-section">Generate AutoCAD Section</h2>
         <div class="construction-box">Under Construction — Final execution pipeline documentation coming soon.</div>
