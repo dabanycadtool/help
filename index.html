@@ -1982,6 +1982,87 @@ h style="padding: 8px; border: 1px solid #eaeaea; width: 30%;">Property Field</t
 
         <p>By shifting styles between these three states, designers can rapidly switch their workstation focus from verifying raw geometric slopes over to reviewing presentation exhibits or validating technical construction pattern depths inside a single environment.</p>
 
+                    <!-- SECTION: THEME -->
+        <h3 id="theme">Theme</h3>
+        <p>The <strong>Theme</strong> setting dictates the environmental backdrop of the interactive preview panel canvas. This function allows users to test geometric visibility across diverse color profiles, simulating everything from a blank CAD model space up to a rich, photorealistic design exhibit. The dashboard provides four distinct background rendering scripts:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">Background Theme</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 75%;">Engineering Definition &amp; Functional Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>White</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Sets the backdrop to a solid white display field. This is optimal for previewing crisp text hierarchies and line metrics intended for standard paper space printing or document compilation.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Black</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Converts the screen backdrop into a solid dark/black canvas. This profile mirrors the native AutoCAD model space workspace environment, helping you immediately spot any thin line colors that might clash with a dark drawing space.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Sky/Ground</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Splits the viewport horizontally along the section datum to draw a multi-color environment. By default, it applies a sky-blue zone over a warm earth-tone ground layer. 
+                    <br><span style="color: #666; font-size: 0.9em; display: inline-block; margin-top: 5px;">💡 <em>Customization Override:</em> Users can accept the application default colors or open a color swatch palette to specify custom solid hex color fills for both the sky zone and ground blocks.</span></td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Realistic</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Renders a high-end presentation canvas backdrop behind your roadway infrastructure profiles. 
+                    <br><span style="color: #666; font-size: 0.9em; display: inline-block; margin-top: 5px;">🖼️ <em>Image Mapping Override:</em> The engine uses built-in default environment raster textures. However, designers have the freedom to browse local workspace files to map their own custom external landscape, skyline, or terrain background image assets.</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+                    <!-- SECTION: TEXT COLOR -->
+        <h3 id="text-color">Text Color</h3>
+        <p>The <strong>Text Color</strong> setting governs the presentation color applied to all displayed annotation labels, cross-slope percentages, offsets, and element strings within the preview canvas. To ensure visibility against any of the background themes, the utility provides two color allocation mechanisms:</p>
+        <ul>
+            <li><strong>Predefined Selection Options:</strong> A dropdown list of standard engineering colors (such as white, black, red, yellow, and blue) for rapid contrast correction.</li>
+            <li><strong>Custom Color Mixer:</strong> An integrated color tuning palette that allows users to mix custom RGB values or input explicit hex codes. This ensures that presentation text can be perfectly matched to corporate branding standards or municipal document styling guidelines.</li>
+        </ul>
+
+        <!-- SECTION: FONT -->
+        <h3 id="font">Font</h3>
+        <p>The <strong>Font</strong> customization tool manages the text typeface across the entire interactive preview viewport. The application hooks directly into your system font registry to expose a wide variety of font selections, ranging from clean modern technical interfaces (like <em>Segoe UI</em>, <em>Arial</em>, or <em>Helvetica</em>) to traditional CAD-styled drafting fonts, giving you total typographic control over your design graphics.</p>
+
+        <!-- SECTION: TICK STYLE -->
+        <h3 id="text-style">Tick Style</h3>
+        <p>The <strong>Tick Style</strong> property dictates the visual termination graphic used for annotation leader lines and dimension bounds within the preview canvas. Designers can toggle between four predefined engineering options to align the preview's terminal graphics with their intended paper space presentation look:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; text-align: left;">
+            <thead>
+                <tr style="background-color: #f6f8fa; border-bottom: 2px solid #eaeaea;">
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 25%;">Terminal Style</th>
+                    <th style="padding: 10px; border: 1px solid #eaeaea; width: 75%;">Visual Behavior &amp; Application Utility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Arrow</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Applies a classic closed, filled arrowhead marker to the ends of dimension lines. This is the industry standard for callout leaders and utility offset tags.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Oblique / Dash</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Deploys a traditional 45-degree architectural slash line across the dimension string bounds. Highly recommended for structural cross-sections and compact roadway corridor plan sheets.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>Dot</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Places a clean, centered circular dot node at the link interface point. Ideal for tight spaces or labeling localized subgrade depth details where lines are crowded.</td>
+                </tr>
+                <tr style="background-color: #fafbfc;">
+                    <td style="padding: 10px; border: 1px solid #eaeaea;"><strong>None</strong></td>
+                    <td style="padding: 10px; border: 1px solid #eaeaea;">Strips all termination markers from the extension lines entirely. This leaves floating dimension figures, which is optimal for creating minimalistic presentation layouts.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECTION: EXPORT -->
+        <h3 id="export">Export</h3>
+        <p>The <strong>Export</strong> utility features a high-performance image capture framework that lets you save your active cross-section layout directly from the preview workspace. Rather than using slow CAD capture routines, clicking this tool automatically extracts the fully rendered scene into an external, high-resolution image file (such as a <code>.png</code> or <code>.jpg</code> asset).</p>
+        <p>This automated engine outputs all configured layer fills, material hatch configurations, custom background imagery styles, and nested entourage elements with absolute clarity. It is designed to allow engineers to rapidly gather clean presentation graphics for project design memos, client pitch decks, or environmental impact assessment manuals without needing to run vector generation passes inside AutoCAD first.</p>
+
 
         <h2 id="generate-section">Generate AutoCAD Section</h2>
         <div class="construction-box">Under Construction — Final execution pipeline documentation coming soon.</div>
